@@ -1,0 +1,91 @@
+
+
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+footer{
+	background-color: $baseColor;
+
+	.grupo{
+		
+		margin-top: 10px;
+		color: $white;
+		margin-bottom: 0;
+		
+		h3{
+			text-transform: uppercase;
+			padding-bottom: 8px;
+			border-bottom: 1px solid rgba($compColor,.6);
+			margin-bottom: 10px;
+			margin-top:20px;
+		}
+
+		.direccion,.redes, .derechos p{
+			@include fontSize(14);	
+			
+		}
+
+		//estilos para la direccion del ispade
+		img{
+			display: block;
+			margin: auto;
+			margin-top:8px;
+		}
+
+		//estilos para redes
+		.redes a{
+			@include fontSize(30);
+			display: inline-block;
+			margin: 5px;
+		}
+			
+			.icon-facebook,.icon-twitter,.icon-youtube{
+				border-radius: 50%;
+				background-color: #fff;
+				
+			}
+
+			.icon-facebook{
+				color:#47639E;
+				
+				
+			}
+			.icon-twitter{
+				color: #55ACEE;
+				
+			}
+			.icon-youtube{
+				color: #CC181E;
+				
+			}
+
+		//estilos para derechso de autor
+		.derechos{
+			p{
+				@include fontSize(12);
+				margin: 0;
+			}
+
+			p:first-child{
+				margin-top: $marginTop + 5;				
+
+			}
+
+			a{
+				font-family: manuscrita;
+				display: block;
+				
+				&:hover{
+					text-decoration: underline;
+				}
+
+			}
+		}	
+
+	}//fin de grupo
+}//fin de footer
+
+
+/*------------media querys----------*/
+

@@ -1,0 +1,88 @@
+
+
+
+
+/*------------------------------------------------------------------
+	$mixins
+--------------------------------------------------------------------*/
+@mixin vendor($property:box-sizing,$value:border-box){
+	
+	-webkit-#{$property}: $value ;
+	-moz-#{$property}:    $value ;
+	-ms-#{$property}:     $value ;
+	-o-#{$property}:      $value ;
+	#{$property}:         $value ;
+}
+
+
+//mixin para con fallback converit pixeles a rem en las fuentes
+@mixin fontSize($size:$font-size){
+	
+	font-size: $size * 1px;
+	font-size: ($size / $fontSize) * 1rem;
+}
+
+//mixin para bordes redondeados 
+@mixin radius($valor:5px){
+	-webkit-border-radius:$valor;
+	-moz-border-radius:$valor;
+	-ms-border-radius:$valor;
+	-o-border-radius:$valor;
+	  border-radius:$valor;
+}
+
+//mixin  fallback para convertir  rem a pixeles
+
+@mixin padding($top:1 ,$right:1 ,$bottom:1 ,$left:1){
+	
+		padding: (($top * $fontSize)* 1px) (($right * $fontSize)*1px) (($bottom * $fontSize)*1px) (($left*$fontSize)*1px);
+		padding: $top * 1rem $right *1rem $bottom*1rem $left*1rem;
+}
+/*------------------------------------------------------------------
+	$mixins EDGRID
+--------------------------------------------------------------------*/
+//Mixins para media queries
+// El parámetro es el nombre del breakpoint
+@mixin hasta($size){
+	@media screen and (max-width: map-get($breakpoints,$size) - 1){
+		@content;
+	}
+}
+
+@mixin desde($size){
+	@media screen and (min-width: map-get($breakpoints,$size)){
+		@content;
+	}
+}
+
+@mixin desde-hasta($desde,$hasta){
+	@media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
+		@content;
+	}
+}
+
+// Mixins para cuadriculas
+// Se aplica contendor de la cuadricula. 
+// Los parámetros son el selector de cada item y el número de columnas
+
+	@mixin cuadricula($items,$columnas){
+		font-size  : 0;
+		margin     : 0;
+		padding    : 0;
+		list-style : none; // por si el contenedor es un ul
+
+		#{$items}, .#{$items}{
+			display        : inline-block;		
+			font-size      : 1rem;		
+			width          : (100% / $columnas - 2%);
+			margin         : 0 1% $marginTop 1%;
+			vertical-align : top;
+		}
+	}
+
+// Mixin para controlar el padding
+// El parámetro es por cuanto se va a multiplicar el padding base.
+	@mixin padding2($numero){
+		padding-left: ($caja--separacion / 2) * $numero;
+		padding-right: ($caja--separacion / 2) * $numero;
+	}

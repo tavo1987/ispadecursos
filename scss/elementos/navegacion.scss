@@ -1,0 +1,195 @@
+
+
+
+/*------------------------------------*\
+    $NAVEGACION
+\*------------------------------------*/
+
+
+//boton menu para motrar
+.icon-menu,.icon-close{
+	
+	@include fontSize(38);
+	position:absolute;
+	left:.5rem;
+	top: 0;
+	line-height: 80px;
+
+		//MEDIA QUERY
+		@include desde(web){
+			display: none;
+		}
+		//FIN MEDIA QUERY
+	}
+
+
+
+//estilos para el boton del menu cerrar
+.icon-close{
+	left:.95rem;
+	line-height: 75px;
+	font-family: $fontFamily;
+	font-weight: bold;
+
+	}	
+
+
+
+//estilos para el menu nav.menu
+.menu{
+	top:79px;
+	left: -100%;
+	width: 80%;
+	height: calc(100% - 79px);
+	position: fixed;
+	background-color: lighten($baseColor,5%);
+	text-align: left;
+	overflow: auto;
+	@include vendor(transition,left .4s ease);
+
+
+	ul a{
+		@include padding(0.8,1,0.8,1);
+		display: block;
+		border-bottom: 1px solid rgba($compColor,.2);
+		span{margin-right: .75rem;}
+		}
+
+	//escondemos los items del submenu	
+	.submenu ul{
+		display: none;
+	}
+	//damos estilos a los subitems
+	.submenu ul a{
+		@include padding(0.8,0,0.8,2.5);
+		
+		&:before{
+			font-family: iconos;
+			content: "\E609";
+			margin-right: .5rem;
+			@include fontSize(15);
+			
+			}
+	}
+
+
+	//ponemos los a con posicion relativa para posicionar los triangulos
+	.submenu a{
+		position: relative;
+		
+	}
+	//estilos para dibujar el tringulo para los submenus
+	.submenu > a:after{
+		font-family: iconos;
+		content: "\e608";
+		right: 1rem;
+		position: absolute;
+		line-height: 25px;
+		@include fontSize(15);
+	}
+
+			
+}
+//fin del menu
+
+//estilos para mostrar el menu mediante jquery 
+.mostrar{
+		left: 0;
+}
+
+
+
+
+
+
+//------------------media query-----------------
+.menu{
+	@include desde(web){
+			
+	float: right;
+	position: static;
+	overflow: visible;
+	width: auto;
+	border-bottom: none;
+	background-color: $baseColor;
+	margin-right: 1rem;
+
+		
+		//damos a los items principales un display-table;
+		> ul{
+			list-style-type: none;
+			display: table;
+			width:100%;
+			line-height: 85px;
+			}
+		//damos estilos los items principales del menu
+		>ul>li> a{
+			display: inline;
+			border-bottom: none;
+			@include padding(.5,.5,.5,.5);
+			text-align: center;
+			@include vendor(transition,all .4s ease);
+			border:1px solid transparent;
+			margin-left: 5px;
+			@include fontSize(18);
+			
+		
+			&:hover{
+				
+				border:1px solid #fff;
+				@include radius();
+
+			}
+		}
+
+		//damos a los items un display table cell y posicion relativa para el
+		//submenu 
+		> ul > li {
+			display: table-cell;
+			position: relative;
+		}
+
+		li > ul{
+		//posionamos absolutamente las listas dentro de los li
+			background-color: $baseColor;
+			line-height: normal;
+			position:absolute;
+			min-width:225px;	
+		}
+		//estilos para el submenu
+		.submenu ul a{
+
+			@include padding(.75,.75,.75,1);
+			@include vendor(transition,all .4s ease);
+			@include vendor(box-shadow,all .9s ease);
+		}
+
+		.submenu ul a:hover{
+			background-color: $secondColor;
+			@include padding(.75,.75,.75,2.25);
+			
+
+		}
+		
+
+		//estilos para el tringulo para los submenus
+		.submenu > a:after{
+			position: static;
+			
+			padding-left:15px;
+		}
+
+		//estilos para los iconos
+		ul a span{
+			margin-right: 5px;
+		}
+
+
+
+	}//fin media query
+
+
+}//fin de media query
+
+
+

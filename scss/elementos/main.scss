@@ -1,0 +1,232 @@
+
+
+
+
+/*-------------------------------------------
+	$main o seccion principal
+---------------------------------------------*/
+.cursos{
+	width: 100%;
+	max-width: $maxWidth;	
+	margin: auto;
+	
+	//estilos para el titulo principal de la seecion o main
+	&__title__main{
+		width: 95%;
+		margin:  0 auto 10px  auto;
+		@include padding(0.75,0,.5,0);
+		border-bottom: 3px solid $secondColor;
+	}
+
+	//estios par os arcicles o items de cada cursos
+	&__items{
+		width: 95%;
+		margin: auto;
+		background-color: darken($white,2%);
+		border: 1px solid rgba($black,.1);
+		@include radius(4px);
+		@include padding(0,1.2,0,1.2);
+		margin-bottom: $marginBottom;
+	}
+	
+	//estilos para el titulo del curso
+	&__title{
+		@include fontSize(24);//parametro en pixeles
+		@include padding(1,0,.5,0);
+		
+	}
+
+	//estilos para la foto del curso
+	&__thumbnails{
+		background-color:$white;
+		border: 1px solid rgba($black,.1);
+		@include padding(.55,.55,.55,.55);
+		@include vendor(box-shadow, 0 2px 5px rgba($black,.1));
+		@include radius(2px);
+		max-height: 250px;	
+	}
+	
+	//estilos para la informacion del curso ejemplo:decripcion,categorias,autor etc.
+	&__info{
+		text-align: left;
+		
+		//estilos para la descripcion del curso
+		&__description{
+			@include padding(1,0,0,0);
+			@include fontSize(16);
+			
+		}
+
+		//bottom de incribirse o leer mas
+		.cursos__info__button{
+			display: block;
+			text-align: center;
+			margin-top: $marginTop;
+			margin-bottom: $marginBottom;
+			@include fontSize(15);
+		}
+
+		.cursos__info__button span{
+			display: inline-block;
+			background-color: $secondColor;
+			@include padding(.5,.75,.5,.75);
+			@include radius($radius);
+
+			&:hover{
+				background-color:$linkColorHover;
+			}
+
+		}
+
+	}//fin de la clase info
+
+
+//estilos para el autor y fecha del curso
+	&__info__meta{
+		text-align: left;
+		padding-top: $paddingTop;
+		padding-bottom: $paddingBottom;
+		border-top: 1px solid rgba($black,.1);
+
+		&__date,&__author{
+			display: block;
+			@include fontSize(14);
+			color: $darkGray;
+
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+
+	}//fin del la clase meta
+
+
+
+//estilos para la categorias del curso
+
+	.cursos__info__category,ul{
+		text-align: left;
+		border-top: 1px solid rgba($black,.1);
+		padding-top: $paddingTop;
+		padding-bottom: $paddingBottom + 5;
+		
+	}
+
+	.cursos__info__category li{
+		display: inline-block;
+	}
+
+
+	.cursos__info__category__links{
+		display: inline-block;
+		@include radius($radius);
+		color: $darkGray;
+		margin: $marginTop - 12;
+		@include fontSize(14);
+		@include padding(.30,.30,.30,.30);
+		border: 1px solid rgba($black,.1);
+
+		&:hover{
+			color: $linkColor;
+			background-color: darken($linkColorHover,5%);
+
+		}
+		
+	}
+
+
+}//cierre de etiqueta cursos
+
+
+
+
+
+/*--------------media query desde movil---------------*/
+
+.cursos{
+	
+	//estilos desde movil
+	@include desde(movil){
+
+		
+		&__items{
+			overflow: hidden;
+		}
+
+		&__thumbnails{
+			width: 45%;
+			float: left;
+			margin-bottom: $marginBottom;
+
+		}
+
+		&__info{
+			
+			width: 55%;		
+			float: left;
+			min-height:150px;
+			padding-left: 10px;
+
+		}
+
+		&__info__description{
+			padding-top:0;
+			}
+
+		.cursos__info__button{
+
+			text-align: left;
+			
+
+		}
+
+		.cursos__info__meta{
+			clear: both;
+
+		}
+		
+	}
+
+
+	//desde tablet
+	@include desde(tablet){
+		@include cuadricula(cursos__items,2);
+		margin:auto;
+		
+		&__items{
+			margin-right: 500px;
+		}
+		
+		&__thumbnails{
+			width: 100%;
+			img{
+				height: auto;
+			}
+		}
+
+		&__info{
+			width: 100%;				
+			min-height:150px;
+			padding-left: 0px;
+		}
+
+		.cursos__info__button{
+			text-align: center;
+		}
+	}
+
+	//desde web
+	@include desde(web){
+		@include cuadricula(cursos__items,3);
+		margin:auto;
+	}
+
+	//desde hd
+	@include desde(fullhd){
+		@include cuadricula(cursos__items,4);
+		margin:auto;
+	}
+
+
+
+}

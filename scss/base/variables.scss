@@ -1,0 +1,73 @@
+
+
+
+
+/*------------------------------------------------------------------
+	$VARIABLES DEL SITIO
+--------------------------------------------------------------------*/
+
+// $variables generales de colores
+
+$baseColor:#205BA7;
+$secondColor: #428BCA;
+$compColor:#E1E8F7;
+
+// $colores
+$white: #fff;
+$black: #000;
+$dark: #222;
+$darkLight:#333;
+$gray:#ccc;
+$darkGray: darken($gray,25%);
+
+// $Fuente 
+$fontSize: 16;
+$fontFamily: 'Open Sans',Verdana, sans-serif;
+$marginBottom: 0.75rem;
+
+// $ancho maximo
+$maxWidth:1200px;
+
+//Links
+$linkColor:$white;
+$linkColorHover:#1AB0FF;
+
+//border radius
+$radius:3px;
+
+//paddings
+$paddingTop:10px;
+$paddingBottom:10px;
+
+//margin
+$marginTop:15px;
+$marginBottom:15px;
+
+
+
+/*------------------------------------------------------------------
+	$VARIABLES  DE ED-GRID
+--------------------------------------------------------------------*/
+// Ancho máximo de cada grupo
+	$grupo--max-width : $maxWidth;
+	
+// Separación entre cajas
+	$caja--separacion : 30px;
+
+// Tamaños. Puede editar los nombres y las
+// medidas, añadir más o quitar.
+	$breakpoints: (
+		movil  : 480px,
+		tablet : 768px,
+		web    : 1025px,
+		hd     : 1400px,
+		fullhd : 1600px
+		);
+
+// Fracciones para los anchos de las cajas.
+// También puede editarlos si desea
+	$fracciones: (
+		tercios : 3,
+		sextos  : 6,
+		octavos : 8
+		);

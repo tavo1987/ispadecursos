@@ -1,0 +1,51 @@
+
+
+
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+header{
+	width: 100%;
+	background-color: $baseColor;
+	position: fixed;
+	z-index: 10;
+	box-shadow: 0 3px  10px rgba(0,0,0,.6);
+
+
+	.header{
+		padding: .25rem 0 .5rem 1rem;
+		max-width: $maxWidth;
+		margin: auto;
+		position: relative;
+
+	}
+
+	.logo{
+		line-height: 65px;
+		img{height: 65px;}
+
+
+	}
+	
+	//media query
+	@include desde(web){
+
+			.header{
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			.logo{
+				float: left;
+				line-height:85px;
+				padding-left:1rem;
+
+				img{height: 80px;}
+			}
+		}
+
+	//fin de media query
+
+}
+

@@ -1,0 +1,86 @@
+.banner{
+	height: 400px;
+	color: $white;
+	background: url(../img/overlay.png),
+				darken($secondColor,15%);
+	background-size: contain;
+	display: table;
+	width: 100%;
+	
+	.lema{
+
+		vertical-align: middle;
+		display: table-cell;
+		@include padding(6.2,1,0,1);
+		
+	}
+
+
+	//etilos para el h1
+	h1{
+		color: $white;
+		@include fontSize(35);
+		font-family: manuscrita;
+		letter-spacing: 5px;
+		margin: 0;
+		}
+
+	//estilos par el boton call to action	
+	a{
+		display: inline-block;
+		background-color: $secondColor;
+		
+		@include padding(.5,1,.5,1);
+		@include radius($radius);
+		@include fontSize(16); 
+		@include vendor(transition,all .4s ease);
+	}
+
+	p{
+		@include fontSize(17); 
+	}
+
+	.fono{
+
+		@include padding();
+		@include fontSize(17); 
+
+	}
+
+	//-----mediaquery desde web------//
+	@include desde(web){
+		height: 600px;
+		background:url(../img/overlay.png),
+				 url(../img/banner-web.jpg);
+		background-size: auto,cover;
+		background-color: $secondColor;
+		
+		h1{
+		@include fontSize(45);
+		}
+
+		a:hover{
+			background-color: $baseColor;
+		}
+		
+		
+	}
+	//-----mediaquery desde hd------//
+	@include desde(hd){
+		height: 750px;
+		background:url(../img/overlay.png),
+				 url(../img/banner-hd.jpg);
+		background-size: auto,cover;
+		
+		
+	}
+	//-----mediaquery desde full hd------//
+	@include desde(fullhd){
+		height: 750px;
+		background:url(../img/overlay.png),
+				 url(../img/banner2.jpg);
+		background-size: auto,cover;
+		
+		
+	}
+}

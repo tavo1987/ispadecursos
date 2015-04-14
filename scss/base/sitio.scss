@@ -1,0 +1,51 @@
+
+
+
+
+/*----------------------------------------------
+	$GENERALES
+------------------------------------------------*/
+@font-face {
+	font-family: 'manuscrita';
+	src:url('../fonts/manuscrita.eot?pvkqfn');
+	src:url('../fonts/manuscrita.eot?#iefixpvkqfn') format('embedded-opentype'),
+		url('../fonts/manuscrita.woff?pvkqfn') format('woff'),
+		url('../fonts/manuscrita.ttf?pvkqfn') format('truetype'),
+		url('../fonts/manuscrita.svg?pvkqfn#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+	background-color: lighten($compColor,2%);
+	text-align: center;
+	font-family: $fontFamily;
+	color: darken($darkGray,4%);
+	}
+
+a{
+	text-decoration: none;
+	@include fontSize(17);
+	color: $linkColor;
+
+}
+
+h1,h2{
+	color: darken($secondColor,5%);
+	margin-bottom: 0.75rem;
+	@include fontSize(32);//el 32 es un valor 	en pixeles
+}
+
+p{
+	margin-bottom: $marginBottom - 5;
+	@include fontSize(18);
+}
+
+article{
+	margin-bottom: $marginBottom + 1;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}

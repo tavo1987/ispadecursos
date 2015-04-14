@@ -1,0 +1,39 @@
+
+/*------------------------------------*\
+    $STYLE
+\*------------------------------------*/
+
+/*
+ Aquí incluímos todos los módulos (archivos .scss) que se van
+ a compilar en el CSS definitivo: /css/style.css.
+*/
+
+
+//variables
+@import "base/variables.scss";
+
+//librerias
+@import "lib/mixins.scss";
+@import "lib/placeholders.scss";
+
+
+//base del sitio web
+@import "base/reset.scss";
+@import "base/sitio.scss";
+
+
+
+// Componentes ED GRID
+@import "componentes/nucleo";      // Núcleo de ED GRID, grupos y cajas
+@import "componentes/cuadricula";  // Realizar cuadriculas
+//@import "componentes/desarrollo";  // Modo desarrollo
+@import "componentes/utilidades";  // Utilidades adicionales
+
+
+//elementos que conforman el sitio web
+@import "elementos/icons.scss";
+@import "elementos/header.scss";
+@import "elementos/navegacion.scss";
+@import "elementos/banner.scss";
+@import "elementos/main.scss";
+@import "elementos/footer.scss";
